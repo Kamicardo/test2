@@ -1,0 +1,11 @@
+---
+
+- name: nginx install
+  yum:
+    name: nginx
+    state: latest
+
+- name: copying nginx project conf
+  template:
+    src: nginx_project.j2
+    dest: "/etc/nginx/conf.d/project.conf"
